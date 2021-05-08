@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
+import { ThemeProvider } from '@material-ui/core/styles'
+import Layout from './components/Layout'
+import MainPage from './pages/mainPage'
+import { theme } from './theme/theme'
+import CartPage from './pages/cartPage'
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Layout >
+            <Switch>
+              <Route exact path='/'>
+                <MainPage />
+              </Route>
+              <Route exact path='/cart'>
+                <CartPage />
+              </Route>
+            </Switch>
+          </Layout>
+        </BrowserRouter>
+      </ThemeProvider>
     </div>
-  );
+  )
 }
-
-export default App;
+export default App
