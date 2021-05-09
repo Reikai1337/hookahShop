@@ -12,7 +12,7 @@ const App = () => {
         <BrowserRouter>
           <Layout >
             <Switch>
-              <Route exact path='/'>
+              <Route path='/'>
                 <MainPage />
               </Route>
               <Route exact path='/cart'>

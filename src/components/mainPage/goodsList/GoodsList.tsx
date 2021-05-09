@@ -1,4 +1,6 @@
 import { Grid, makeStyles, Typography } from "@material-ui/core"
+import { useRouteMatch } from "react-router";
+import { urlToProduct } from "../../../common/urlToProduct";
 import { theme } from "../../../theme/theme"
 import GoodsTile from "./goodsTile/GoodsTile";
 
@@ -29,14 +31,16 @@ const useStyles = makeStyles({
         marginBottom: theme.spacing(3),
     }
 })
-
-const GoodsList: React.FC = () => {
+interface urlParams {
+    [key:string]: any,
+}
+const GoodsList: React.FC = (props:any) => {
     const classes = useStyles()
+    const { params }:urlParams = useRouteMatch()
     const exArr = [0, 0, 0, 0, 0, 0, 0, 0]
-
     return (
         <div className={classes.root}>
-            <Typography gutterBottom variant='h4' component='h2'>Все товары</Typography>
+            <Typography gutterBottom variant='h4' component='h2'>{urlToProduct(params.product)}</Typography>
             <Grid justify='center' container spacing={6}>
                 {exArr.map(item => <GoodsTile />)}
             </Grid>
