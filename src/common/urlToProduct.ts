@@ -1,4 +1,4 @@
-export function urlToProduct (url:string):string {
+export function urlToProduct(url: string | undefined): string {
   switch (url) {
     case 'hookah': return 'Кальяны'
     case 'all': return 'Всё'

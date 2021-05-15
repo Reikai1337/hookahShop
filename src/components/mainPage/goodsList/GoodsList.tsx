@@ -31,12 +31,15 @@ const useStyles = makeStyles({
         marginBottom: theme.spacing(3),
     }
 })
+
 interface urlParams {
-    [key:string]: any,
+    [key: string]: string | undefined,
 }
-const GoodsList: React.FC = (props:any) => {
+
+const GoodsList: React.FC = (props: any) => {
     const classes = useStyles()
-    const { params }:urlParams = useRouteMatch()
+    const { params } = useRouteMatch<urlParams>()
+
     const exArr = [0, 0, 0, 0, 0, 0, 0, 0]
     return (
         <div className={classes.root}>

@@ -46,10 +46,10 @@ const FilterTab: React.FC = () => {
         <NavLink to="/coals">
           <Button size="large">Угли</Button>
         </NavLink>
-        <NavLink to="bowls">
+        <NavLink to="/bowls">
           <Button size="large">Чаши</Button>
         </NavLink>
-        <NavLink to="accessories">
+        <NavLink to="/accessories">
           <Button size="large">Аксессуары</Button>
         </NavLink>
       </div>
