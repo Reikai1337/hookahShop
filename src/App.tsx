@@ -12,12 +12,9 @@ const App = () => {
         <BrowserRouter>
           <Layout >
             <Switch>
-              <Route path='/'>
-                <MainPage />
-              </Route>
-              <Route exact path='/cart'>
-                <CartPage />
-              </Route>
+              <Route path='/' component={MainPage} />
+              <Route path='/:category' component={MainPage} />
+              <Route exact path='/cart' component={CartPage} />
             </Switch>
           </Layout>
         </BrowserRouter>

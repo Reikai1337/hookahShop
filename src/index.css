@@ -3,14 +3,12 @@
   margin: 0;      
   box-sizing: border-box;
   text-decoration: none;
-}
+  }
 
-a {
-  all: none
-}
-
-
-
+  a:-webkit-any-link {
+    text-decoration: none;
+    color: inherit;
+  }
 
 body {    
     background: #5DC8CD;
